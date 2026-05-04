@@ -1,3 +1,9 @@
+## 1.0.1 2026-05-04 <code at nfrastack dot com>
+
+   ### Changed
+      - Use pluginid instead for settings
+
+
 ## 1.0.0 2026-05-03 <code at nfrastack dot com>
 
    ### Added
