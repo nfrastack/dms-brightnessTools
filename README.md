@@ -29,12 +29,13 @@ Brightness Tools is a DankMaterialShell (DMS) plugin that lets you place indepen
 - [Permissions](#permissions)
 - [Caveats](#caveats)
 - [Troubleshooting](#troubleshooting)
+- [Support & Maintenance](#support--maintenance)
 - [License](#license)
 
 ## Requirements
 
 - DankMaterialShell with the `brightness` capability (any 1.5-beta build is fine)
-- `dms` binary on PATH (used by the **Refresh devices** button to enumerate devices via `dms brightness list`)
+- `dms` binary on PATH (used by the Refresh devices button to enumerate devices via `dms brightness list`)
 - Optional: `brightnessctl` for the silent (`Show OSD = off`) write path; falls back to `dms ipc` otherwise
 
 ## Installation
@@ -44,11 +45,11 @@ mkdir -p ~/.config/DankMaterialShell/plugins/
 git clone https://github.com/nfrastack/dms-brightnessTools ~/.config/DankMaterialShell/plugins/brightnessTools
 ```
 
-Reload DMS, then enable **Brightness Tools** in Settings → Plugins.
+Reload DMS, then enable **Brightness Tools** in Settings -> Plugins.
 
 ## Configuration
 
-Open Settings → Plugins → **Brightness Tools**, click **Refresh devices** to populate the device dropdown, then add one variant per slider you want.
+Open Settings -> Plugins -> **Brightness Tools**, click **Refresh devices** to populate the device dropdown, then add one variant per slider you want.
 
 Per-variant fields:
 
@@ -71,7 +72,7 @@ Plugin-wide:
 
 ## Usage
 
-- **Bar pill**: shows the icon + current percentage. Click → popout slider.
+- **Bar pill**: shows the icon + current percentage. Click -> popout slider.
 - **Control center**: a single **Brightness** entry whose detail panel renders one slider per variant flagged `Include in control center`.
 - **External changes**: pressing a Fn-brightness key updates the pill within via `FileView { watchChanges: true }`.
 
@@ -92,9 +93,9 @@ The plugin requests these permissions (in `plugin.json`):
 
 ## Troubleshooting
 
-- "Device dropdown empty after Refresh": run `dms brightness list` manually — if it fails or shows nothing, your DMS isn't running with the `brightness` capability. The plugin falls back to a sysfs scan automatically; check the journal for `brightnessTools` messages.
-- "Slider doesn't update when I press Fn keys": confirm `/sys/class/<class>/<dev>/brightness` is readable by your user.
-- "Save doesn't stick / shows blank on reload": indicates a stale settings cache; toggle the plugin off then on in Settings → Plugins to force a reload.
+- "Device dropdown empty after Refresh" - run `dms brightness list` manually — if it fails or shows nothing, your DMS isn't running with the `brightness` capability. The plugin falls back to a sysfs scan automatically; check the journal for `brightnessTools` messages.
+- "Slider doesn't update when I press Fn keys"-  confirm `/sys/class/<class>/<dev>/brightness` is readable by your user.
+- "Save doesn't stick / shows blank on reload" -  indicates a stale settings cache; toggle the plugin off then on in Settings -> Plugins to force a reload.
 
 ## Support & Maintenance
 
