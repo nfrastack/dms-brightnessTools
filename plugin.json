@@ -1,0 +1,18 @@
+{
+    "id": "brightnessTools",
+    "name": "Brightness Tools",
+    "description": "Pick-and-choose brightness sliders for backlights and LEDs. One variant per slider; bar pill or control-center placement.",
+    "version": "1.0.0",
+    "author": "nfrastack",
+    "icon": "brightness_6",
+    "component": "./BrightnessToolsWidget.qml",
+    "settings": "./BrightnessToolsSettings.qml",
+    "capabilities": [
+        "variants"
+    ],
+    "permissions": [
+        "settings_read",
+        "settings_write",
+        "process"
+    ]
+}
