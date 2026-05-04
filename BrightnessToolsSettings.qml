@@ -9,7 +9,7 @@ import "icons.js" as Icons
 
 PluginSettings {
     id: root
-    pluginId: "brightnessPills"
+    pluginId: "brightnessTools"
 
     // PluginSettings does NOT inherit pluginData from PluginComponent — mirror it manually.
     property var pluginData: ({})
@@ -18,7 +18,7 @@ PluginSettings {
             if (pluginService && pluginId)
                 pluginData = SettingsData.getPluginSettingsForPlugin(pluginId);
         } catch (e) {
-            console.warn("brightnessPills settings: pluginData reload failed:", e);
+            console.warn("brightnessTools settings: pluginData reload failed:", e);
         }
     }
     Connections {
@@ -147,7 +147,7 @@ PluginSettings {
                 // Fall back to sysfs scan
                 sysfsScan.running = true;
             } else {
-                pluginService.savePluginData("brightnessPills", "deviceList", parsed);
+                pluginService.savePluginData(root.pluginId, "deviceList", parsed);
                 root.deviceList = parsed;
                 deviceDropdownLoader.active = false;
                 deviceDropdownLoader.active = true;
@@ -176,7 +176,7 @@ PluginSettings {
                 root.refreshError = "No devices found via dms brightness list or sysfs.";
                 return;
             }
-            pluginService.savePluginData("brightnessPills", "deviceList", parsed);
+            pluginService.savePluginData(root.pluginId, "deviceList", parsed);
             root.deviceList = parsed;
             deviceDropdownLoader.active = false;
             deviceDropdownLoader.active = true;
@@ -218,7 +218,7 @@ PluginSettings {
 
     StyledText {
         width: parent.width
-        text: "Brightness Pills"
+        text: "Brightness Tools"
         font.pixelSize: Appearance.fontSize.large
         font.weight: Font.Bold
         color: Theme.surfaceText
